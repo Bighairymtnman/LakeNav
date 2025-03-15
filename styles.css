@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button {
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background: #2c3e50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #34495e;
+}
+
+.ol-zoom {
+    top: 20px;
+    left: 20px;
+}
+
+
+
+.waypoint-icon {
+    background: none;
+    border: none;
+}
+
+.waypoint-number {
+    width: 30px;
+    height: 30px;
+    background-color: #2c3e50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+
+/* Add these to your existing styles.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-buttons {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.new-route-btn {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-route-btn:hover {
+    background-color: #34495e;
+}
+
+.saved-routes {
+    background-color: #f5f6fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.route-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.route-actions button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.route-actions button:first-child {
+    background-color: #3498db;
+    color: white;
+}
+
+.route-actions button:last-child {
+    background-color: #e74c3c;
+    color: white;
+}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+#routeName {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+.modal-content button {
+    margin: 5px;
+    padding: 8px 16px;
+}
+
+
+.modal {
+    z-index: 1000;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LakeNav - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LakeNav</h1>
+        </header>
+        
+        <main>
+            <div class="main-buttons">
+                <button onclick="window.location.href='map.html?mode=save'" class="create-route-btn">Create & Save Route</button>
+                <button onclick="window.location.href='map.html?mode=quick'" class="quick-route-btn">Quick Route</button>
+            </div>
+
+            <div class="saved-routes">
+                <h2>Saved Routes</h2>
+                <div id="routesList">
+                    <!-- Saved routes will be populated here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/home.js"></script>
+</body>
+</html>
+

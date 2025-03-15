@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LakeNav</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="map"></div>
+    <div class="controls">
+        <button id="addWaypoint">Add Waypoint</button>
+        <button id="clearWaypoints">Clear All</button>
+        <button id="optimizeRoute">Optimize Route</button>
+        <button id="saveRoute">Save Route</button>
+        <button id="backToHome" onclick="window.location.href='index.html'">Back to Home</button>
+</div>
+
+    <!-- Save Route Modal -->
+    <div id="saveRouteModal" class="modal">
+        <div class="modal-content">
+            <h2>Save Route</h2>
+            <input type="text" id="routeName" placeholder="Enter route name">
+            <button id="confirmSave">Save</button>
+            <button id="cancelSave">Cancel</button>
+        </div>
+    </div>
+   
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="scripts/map.js"></script>
+
+    <div id="saveRouteModal" class="modal">
+        <div class="modal-content">
+            <h2>Save Route</h2>
+            <input type="text" id="routeName" placeholder="Enter route name">
+            <button id="confirmSave">Save</button>
+            <button id="cancelSave">Cancel</button>
+        </div>
+    </div>
+    
+
+</body>
+</html>

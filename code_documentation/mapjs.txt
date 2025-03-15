@@ -1,0 +1,92 @@
+/**
+ * LakeNav Map Module
+ * Handles all map-related functionality including waypoint management,
+ * route optimization, and route saving.
+ * 
+ * @module map
+ * @requires Leaflet.js
+ * @requires HERE Maps API
+ */
+
+/**
+ * Initializes the map and all event handlers when DOM is loaded
+ * @function
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    // Map initialization
+    const map = L.map('map').setView([43.0, -87.5], 8);
+
+    /**
+     * HERE Maps API key for water detection
+     * @constant {string}
+     */
+    const hereApiKey = 'qtFoibUC3IxKwJUFcjzsInoqMXEd-_hhh0NMO59j0lg';
+
+    /**
+     * Checks if a location is a water body using HERE API
+     * @async
+     * @param {number} lat - Latitude
+     * @param {number} lng - Longitude
+     * @returns {Promise<boolean>} True if location is water
+     */
+    async function isWater(lat, lng) {
+        // ... existing isWater function code ...
+    }
+
+    /**
+     * Array to store all waypoints
+     * @type {Array<Object>}
+     */
+    let waypoints = [];
+
+    /**
+     * Flag for waypoint addition mode
+     * @type {boolean}
+     */
+    let addingWaypoint = false;
+
+    /**
+     * Current route polyline
+     * @type {L.Polyline|null}
+     */
+    let routeLine = null;
+
+    /**
+     * Updates the route line on the map
+     * @function
+     */
+    function updateRouteLine() {
+        // ... existing updateRouteLine function code ...
+    }
+
+    /**
+     * Creates a custom waypoint icon with number
+     * @param {number} number - Waypoint sequence number
+     * @returns {L.DivIcon} Leaflet div icon
+     */
+    function createWaypointIcon(number) {
+        // ... existing createWaypointIcon function code ...
+    }
+
+    /**
+     * Optimizes route using nearest neighbor algorithm
+     * @function
+     */
+    function optimizeRoute() {
+        // ... existing optimizeRoute function code ...
+    }
+
+    /**
+     * Calculates distance between two points using Haversine formula
+     * @param {number} lat1 - Start latitude
+     * @param {number} lon1 - Start longitude
+     * @param {number} lat2 - End latitude
+     * @param {number} lon2 - End longitude
+     * @returns {number} Distance in kilometers
+     */
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+        // ... existing calculateDistance function code ...
+    }
+
+    // ... Continue with event handlers and remaining code ...
+});

@@ -1,0 +1,93 @@
+/**
+ * LakeNav Home Module
+ * Handles the display and management of saved routes on the home page
+ * 
+ * @module home
+ */
+
+/**
+ * Initializes route loading when DOM is loaded
+ * @function
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    loadSavedRoutes();
+});
+
+/**
+ * Fetches saved routes from the database
+ * @async
+ * @function
+ */
+function loadSavedRoutes() {
+    fetch('api/get_routes.php')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                displayRoutes(data.routes);
+            } else {
+                console.error('Error loading routes:', data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Failed to load routes:', error);
+        });
+}
+
+/**
+ * Displays routes in the UI
+ * @function
+ * @param {Array<Object>} routes - Array of route objects
+ */
+function displayRoutes(routes) {
+    const routesList = document.getElementById('routesList');
+    routesList.innerHTML = '';
+
+    if (routes.length === 0) {
+        routesList.innerHTML = '<p>No saved routes yet.</p>';
+        return;
+    }
+
+    routes.forEach(route => {
+        const routeElement = document.createElement('div');
+        routeElement.className = 'route-item';
+        routeElement.innerHTML = `
+            <h3>${route.name}</h3>
+            <p>Created: ${new Date(route.created_at).toLocaleDateString()}</p>
+            <button onclick="viewRoute(${route.id})">View Route</button>
+            <button onclick="deleteRoute(${route.id})">Delete</button>
+        `;
+        routesList.appendChild(routeElement);
+    });
+}
+
+/**
+ * Navigates to map view for a specific route
+ * @function
+ * @param {number} routeId - ID of the route to view
+ */
+function viewRoute(routeId) {
+    window.location.href = `map.html?route=${routeId}`;
+}
+
+/**
+ * Deletes a route from the database
+ * @async
+ * @function
+ * @param {number} routeId - ID of the route to delete
+ */
+function deleteRoute(routeId) {
+    if (confirm('Are you sure you want to delete this route?')) {
+        fetch(`api/delete_route.php?id=${routeId}`, { method: 'DELETE' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    loadSavedRoutes();
+                } else {
+                    alert('Error deleting route: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Failed to delete route:', error);
+            });
+    }
+}
